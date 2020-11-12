@@ -1,0 +1,134 @@
+Index: styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>body{\r\n    margin: 0;\r\n    width: 100%;\r\n    height: 100vh;\r\n    overflow: hidden;\r\n    background-color: #1B2638;\r\n}\r\n\r\n\r\n#bgVideo{\r\n    width: 100%;\r\n    height: 100vh;\r\n    object-fit: cover;\r\n\r\n}\r\n.bottomMenu{\r\n\r\n     width: 100%;\r\n\r\n}\r\n\r\n.bottomIconsRow{\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    width: 100%;\r\n    height: 75px;\r\n}\r\n.bottomMenu span{\r\n   margin-right: 5px;\r\n   margin-left: 5px;\r\n    color: white;\r\n    font-size: 20px;\r\n}\r\n#local-video{\r\n    position: fixed;\r\n    top: 0;\r\n    right: 10px;\r\n    width: 150px;\r\n    height: 100px;\r\n    margin-top: 12px;\r\n}\r\n#local-video video{\r\n    width: 100%;\r\n    height: 100%;\r\n    max-height: 100px;\r\n    object-fit: cover;\r\n}\r\n\r\n.bottomSection{\r\n    position: absolute;\r\n    bottom: -65px;\r\n    width: 100%;\r\n    transition: all 0.5s linear;\r\n    height: 66px;\r\n}\r\n.bottomSection .otherUsers-video{\r\n    display: flex;\r\n    flex-direction: column-reverse;\r\n    width: fit-content;\r\n    right: 10px;\r\n    position: absolute;\r\n    bottom: 105px;\r\n    transition: all 0.5s linear;\r\n    height: calc(100vh - 158px);\r\n    overflow: auto;\r\n    opacity: 0;\r\n }\r\n.bottomSection .otherUsers-video::-webkit-scrollbar {\r\n    width: 4px;\r\n    display: none;\r\n}\r\n\r\n.bottomSection .otherUsers-video .otherUser-videoBox{\r\n    width: 150px;\r\n    height: 100px;\r\n    margin-bottom: 8px;\r\n\r\n }\r\n.bottomSection .otherUsers-video .otherUser-videoBox video{\r\n    width: 100%;\r\n    height: 100%;\r\n    max-height: 100px;\r\n    object-fit: cover;\r\n\r\n }\r\n#HoverBox{\r\n    width: 100%;\r\n    height: 150px;\r\n     position: absolute;\r\n    bottom: 0;\r\n }\r\n\r\n#HoverBox:hover .bottomSection{\r\n    bottom: 0;\r\n }\r\n#HoverBox:hover .otherUsers-video{\r\nopacity: 1;\r\n    height: calc(100vh - 225px);\r\n}\r\n\r\n#pullRight{\r\n    position: absolute;\r\n    cursor: pointer;\r\n    bottom: 53px;\r\n    right: 16px;\r\n    padding: 5px;\r\n    color: white;\r\n    margin-bottom: 17px;\r\n    transition: all 0.5s linear;\r\n}\r\n\r\n.smallVideo{\r\n    transition: all 0.5s linear;\r\n}\r\n.smallVideo.PullRight{\r\n    right: -150px!important;\r\n}\r\n#pullRight.rotate{\r\n    transform: rotate(180deg);\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- styles.css	(revision 45754d2881d4eb612c80f4fbea22c76239464066)
++++ styles.css	(date 1605190519235)
+@@ -15,7 +15,7 @@
+ }
+ .bottomMenu{
+ 
+-     width: 100%;
++    margin: 0 20px;
+ 
+ }
+ 
+@@ -120,3 +120,11 @@
+     transform: rotate(180deg);
+ }
+ 
++.bottomIconsRow .sideIcons span {
++    font-size: 21px;
++     margin: 0 12px;
++}
++.bottomIconsRow .centerIcons span {
++    font-size: 25px;
++     margin: 0 12px;
++}
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Title</title>\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"icons/style.css\">\r\n    <link rel=\"stylesheet\" href=\"styles.css\">\r\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\r\n\r\n\r\n</head>\r\n<body dir=\"rtl\">\r\n<section>\r\n    <div class=\"bgVideo-box\">\r\n        <video id=\"bgVideo\" src=\"video.mp4\" autoplay muted></video>\r\n    </div>\r\n    <div id=\"local-video\" class=\"smallVideo\">\r\n        <video src=\"video.mp4\" autoplay muted></video>\r\n    </div>\r\n    <div id=\"HoverBox\">\r\n\r\n        <div class=\"bottomSection\">\r\n\r\n            <div class=\"otherUsers-video smallVideo\">\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n                <div class=\"otherUser-videoBox\">\r\n                    <video src=\"video.mp4\" autoplay muted></video>\r\n                </div>\r\n\r\n\r\n            </div>\r\n\r\n            <div class=\"bottomMenu\">\r\n                <div id=\"pullRight\"><span class=\"icon-next\"></span></div>\r\n                <div class=\"bottomIconsRow\">\r\n\r\n                    <div> <span class=\" icon-menu-4\"></span>     <span class=\"icon-contact\"></span>\r\n                        <span class=\"icon-shield-1\"></span>\r\n\r\n\r\n                        <span class=\"icon-menu-21\"></span>\r\n\r\n\r\n\r\n                    </div>\r\n                    <div>\r\n\r\n                        <span class=\"icon-microphone-black-shape\"></span>\r\n                        <span class=\"icon-phone-call-1\"></span>\r\n                        <span class=\" icon-video-camera\"></span>\r\n\r\n\r\n                    </div>\r\n                    <div> <span class=\"icon-chat-1\"></span> <span class=\"icon-monitor1\"></span>\r\n                        <span class=\"icon-hand\"></span>\r\n\r\n\r\n                    </div>\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n\r\n    </div>\r\n</section>\r\n<script>\r\n$('#pullRight').on('click',function (){\r\n    $('.smallVideo').toggleClass('PullRight');\r\n    $(this).toggleClass('rotate');\r\n\r\n })\r\n\r\n</script>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.html	(revision 45754d2881d4eb612c80f4fbea22c76239464066)
++++ index.html	(date 1605189706898)
+@@ -58,7 +58,7 @@
+                 <div id="pullRight"><span class="icon-next"></span></div>
+                 <div class="bottomIconsRow">
+ 
+-                    <div> <span class=" icon-menu-4"></span>     <span class="icon-contact"></span>
++                    <div class="sideIcons"> <span class=" icon-menu-4"></span>     <span class="icon-contact"></span>
+                         <span class="icon-shield-1"></span>
+ 
+ 
+@@ -67,7 +67,7 @@
+ 
+ 
+                     </div>
+-                    <div>
++                    <div class="centerIcons">
+ 
+                         <span class="icon-microphone-black-shape"></span>
+                         <span class="icon-phone-call-1"></span>
+@@ -75,7 +75,7 @@
+ 
+ 
+                     </div>
+-                    <div> <span class="icon-chat-1"></span> <span class="icon-monitor1"></span>
++                    <div class="sideIcons"> <span class="icon-chat-1"></span> <span class="icon-monitor1"></span>
+                         <span class="icon-hand"></span>
+ 
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fc185fe9-a6e7-4fc5-b361-b3a162483e10\" name=\"Default Changelist\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ComposerSettings\">\r\n    <execution />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"CSS File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1k9sjlQJBFw9TYxGYEmUyAeVsUt\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"list.type.of.created.stylesheet\" value=\"CSS\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fc185fe9-a6e7-4fc5-b361-b3a162483e10\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1605124282545</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1605124282545</updated>\r\n      <workItem from=\"1605124283936\" duration=\"24080000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 45754d2881d4eb612c80f4fbea22c76239464066)
++++ .idea/workspace.xml	(date 1605190369593)
+@@ -1,7 +1,20 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="BranchesTreeState">
++    <expand>
++      <path>
++        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
++        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
++      </path>
++    </expand>
++    <select />
++  </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fc185fe9-a6e7-4fc5-b361-b3a162483e10" name="Default Changelist" comment="" />
++    <list default="true" id="fc185fe9-a6e7-4fc5-b361-b3a162483e10" name="Default Changelist" comment="">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles.css" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -18,7 +31,11 @@
+       </list>
+     </option>
+   </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
+   <component name="ProjectId" id="1k9sjlQJBFw9TYxGYEmUyAeVsUt" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+@@ -39,11 +56,22 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1605124282545</updated>
+-      <workItem from="1605124283936" duration="24080000" />
++      <workItem from="1605124283936" duration="25604000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="TAB_STATES">
++      <map>
++        <entry key="MAIN">
++          <value>
++            <State />
++          </value>
++        </entry>
++      </map>
++    </option>
++  </component>
+ </project>
+\ No newline at end of file

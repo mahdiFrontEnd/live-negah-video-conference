@@ -15,7 +15,7 @@ body{
 }
 .bottomMenu{
 
-     width: 100%;
+    margin: 0 20px;
 
 }
 
@@ -120,3 +120,11 @@ opacity: 1;
     transform: rotate(180deg);
 }
 
+.bottomIconsRow .sideIcons span {
+    font-size: 21px;
+     margin: 0 12px;
+}
+.bottomIconsRow .centerIcons span {
+    font-size: 25px;
+     margin: 0 12px;
+}
