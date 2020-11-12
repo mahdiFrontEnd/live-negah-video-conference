@@ -12,82 +12,82 @@
 
 </head>
 <body dir="rtl">
-<section>
-    <div class="bgVideo-box">
-        <video id="bgVideo" src="video.mp4" autoplay muted></video>
-    </div>
-    <div id="local-video" class="smallVideo">
-        <video src="video.mp4" autoplay muted></video>
-    </div>
-    <div id="HoverBox">
-
-        <div class="bottomSection">
-
-            <div class="otherUsers-video smallVideo">
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-                <div class="otherUser-videoBox">
-                    <video src="video.mp4" autoplay muted></video>
-                </div>
-
-
-            </div>
-
-            <div class="bottomMenu">
-                <div id="pullRight"><span class="icon-next"></span></div>
-                <div class="bottomIconsRow">
-
-                    <div class="sideIcons"> <span class=" icon-menu-4"></span>     <span class="icon-contact"></span>
-                        <span class="icon-shield-1"></span>
-
-
-                        <span class="icon-menu-21"></span>
-
-
-
-                    </div>
-                    <div class="centerIcons">
-
-                        <span class="icon-microphone-black-shape"></span>
-                        <span class="icon-phone-call-1"></span>
-                        <span class=" icon-video-camera"></span>
-
-
-                    </div>
-                    <div class="sideIcons"> <span class="icon-chat-1"></span> <span class="icon-monitor1"></span>
-                        <span class="icon-hand"></span>
-
-
-                    </div>
-                </div>
-
+<section id="main-container">
+    <div id="video-box">
+        <div class="bgVideo-box">
+            <video id="bgVideo" src="video.mp4" autoplay muted></video>
+        </div>
+        <div id="local-video" class="smallVideo">
+            <video id="l1" src="video.mp4" autoplay muted></video>
+            <div class="name-box"><p>name</p></div>
+            <div class="icons-box">
+                <div class="camera"><span class="icon-video-camera"></span> </div>
+                <div class="mic"><span class="icon-microphone"></span> </div>
+                <div class="hand"> <span class="icon-hand"></span> </div>
             </div>
         </div>
+        <div id="HoverBox">
 
+            <div class="bottomSection">
+
+                <div class="otherUsers-video smallVideo">
+                    <div class="otherUser-videoBox">
+                        <video src="video.mp4" autoplay muted></video>
+                        <div class="name-box"><p>name</p></div>
+                        <div class="icons-box">
+                            <div class="camera"><span class="icon-video-camera"></span> </div>
+                            <div class="mic"><span class="icon-microphone"></span> </div>
+                            <div class="hand"> <span class="icon-hand"></span> </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="bottomMenu">
+                    <div id="pullRight"><span class="icon-next"></span></div>
+                    <div class="bottomIconsRow">
+
+                        <div class="sideIcons"> <span class=" icon-menu-4"></span>     <span class="icon-contact"></span>
+                            <span class="icon-shield-1"></span>
+
+
+                            <span class="icon-menu-21"></span>
+
+
+
+                        </div>
+                        <div class="centerIcons">
+
+                            <div class="Iconmicrophone circleIcon">
+                                <span class="icon-microphone-black-shape"></span>
+                                <div class="dropdownIconBox"><span class="icon-next"></span></div>
+                            </div>
+                            <div class="Iconphone circleIcon"><span class="icon-phone-call"></span></div>
+                            <div class="Iconcamera circleIcon">
+                                <span class=" icon-video-camera"></span>
+                                <div class="dropdownIconBox"><span class="icon-next"></span></div>
+                            </div>
+
+
+                        </div>
+                        <div class="sideIcons"> <span id="chat-btn" class="icon-chat-1"></span> <span class="icon-monitor1"></span>
+                            <span class="icon-hand"></span>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
     </div>
+    <div id="chat-box"></div>
 </section>
+
+
+
 <script>
 $('#pullRight').on('click',function (){
     $('.smallVideo').toggleClass('PullRight');
@@ -95,8 +95,27 @@ $('#pullRight').on('click',function (){
 
  })
 
+$(document).ready(function() {
 
+    var bgVideo = $('#main-container');
+    var moveTimer;
 
+    bgVideo.on("mouseout",function(){
+        $('#HoverBox').removeClass('mouse-move')
+        clearTimeout(moveTimer);
+    });
+
+    bgVideo.on("mousemove",function(){
+        clearTimeout(moveTimer);
+        moveTimer = setTimeout(function(){
+            $('#HoverBox').removeClass('mouse-move');},2000)
+
+        $('#HoverBox').addClass('mouse-move');
+    });
+});
+$('#chat-btn').on('click',function(){
+    $('#main-container').toggleClass('open-chatBox');
+})
 
 </script>
 </body>

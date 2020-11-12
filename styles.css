@@ -27,10 +27,10 @@ body{
     height: 75px;
 }
 .bottomMenu span{
-   margin-right: 5px;
-   margin-left: 5px;
-    color: white;
+
+
     font-size: 20px;
+    cursor: pointer;
 }
 #local-video{
     position: fixed;
@@ -71,12 +71,37 @@ body{
     display: none;
 }
 
+
 .bottomSection .otherUsers-video .otherUser-videoBox{
     width: 150px;
     height: 100px;
     margin-bottom: 8px;
+    position: relative;
 
  }
+.smallVideo .name-box{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgba(6,6,6,0.5);
+
+}
+.smallVideo .name-box p{
+    text-align: center;
+    line-height: 100px;
+    margin: 0;
+    color: white;
+}
+.smallVideo .icons-box{
+    position: absolute;
+    display: flex;
+    color: white;
+    bottom: 5px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
 .bottomSection .otherUsers-video .otherUser-videoBox video{
     width: 100%;
     height: 100%;
@@ -86,15 +111,19 @@ body{
  }
 #HoverBox{
     width: 100%;
-    height: 150px;
+    height: 0;
      position: absolute;
     bottom: 0;
+    transition: all 0.5s linear;
+    background-image: -moz-linear-gradient(#e8e8e800, #0202028f);
+    background-image: -webkit-linear-gradient(#e8e8e800, #0202028f);
+    background-image: linear-gradient(#e8e8e800, #0202028f);
  }
 
-#HoverBox:hover .bottomSection{
+.mouse-move .bottomSection{
     bottom: 0;
  }
-#HoverBox:hover .otherUsers-video{
+.mouse-move .bottomSection .otherUsers-video{
 opacity: 1;
     height: calc(100vh - 225px);
 }
@@ -122,9 +151,69 @@ opacity: 1;
 
 .bottomIconsRow .sideIcons span {
     font-size: 21px;
-     margin: 0 12px;
+
 }
-.bottomIconsRow .centerIcons span {
-    font-size: 25px;
-     margin: 0 12px;
+
+.bottomIconsRow .centerIcons span.icon-phone-call-1 {
+   color: red;
+}
+.centerIcons{
+    display: flex;
+}
+
+.circleIcon{
+    position: relative;
+    background-color: white;
+    border-radius: 50%;
+    padding: 10px 12px;
+    color: #5e6d7a;
+    margin: 0 9px;
+}
+.dropdownIconBox{
+    position: absolute;
+    bottom: -3px;
+    right: -8px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 1px 4px;
+    transform: rotate(90deg);
+    box-shadow: 0 0 5px black;
+}
+.dropdownIconBox span{
+
+    color: #5e6d7a;
+    font-size: 12px;
+    font-weight: bolder;
+
+}
+.sideIcons span {
+    margin: 0 7px;
+    color: white;
+}
+
+.Iconphone{
+background-color: red!important;
+    transform: rotate(135deg);
+}
+.Iconphone .icon-phone-call{
+color: white!important;
+}
+#HoverBox.mouse-move{
+    height: 150px;
+}
+#chat-box{
+    width: 375px;
+    height: 100vh;
+    background-color: #5e6d7a;
+    position: absolute;
+    top: 0;
+    left: -375px;
+}
+
+#main-container.open-chatBox #video-box{
+    position: relative;
+    width: calc(100% - 375px);
+}
+#main-container.open-chatBox #chat-box{
+    left: 0;
 }

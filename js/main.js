@@ -3,7 +3,9 @@ navigator.mediaDevices.getUserMedia({
     audio: true,
 }).then(stream => {
     let video = document.getElementById('bgVideo');
+    let l1 = document.getElementById('l1');
     video.srcObject = stream;
+    l1.srcObject = stream;
 
 
 }).catch(function (err) {
